@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+
+        //자바 스크립트의 함수(자바의 메서드)
+        function abc(){
+            document.write("<h2>자바스크립트의 일반적인 함수입니다. 자바처럼 호출합니다.</h2>");
+        }
+        abc();
+        //함수는 호출 명령없이 스스로 실행되지 않는다. 별도의 호출이 필요하다.
+        function abc2(){
+            alert("자바스크립트의 일반적인 함수입니다. 버튼으로 호출합니다.");
+        }
+
+        //★★★★★★자바 스크립트 "변수"의 특별한 기능★★★★★★
+        //자바스크립트의 변수는 함수도 저장가능
+        //자바스크립ㅌ느는 평소 사용하는 함수가 자바의 스태틱함수(메서드)이며 생성후 자유롭게 호출하여 사용.또한 다음과같이 만들어지는 함수를 변수에 담아서 사용하기도함
+        var fv1 = function(){
+            document.write("<h2>함수를 변수에 저장했습니다. 그리고 변수이름으로 호출하겠습니다.</h2>");
+        }
+        //이름이 없는 함수를 변수에 저장하여 변수이름을 함수이름인것처럼 사용하여 호출
+        fv1();
+        var fv2 = function(){
+            alert("함수를 변수에 저장했어요. 그리고 변수이름으로 호출합니다.")
+        }
+
+        //function(){
+        //    }
+        //위와 같이 생긴 함수를 익명함수라고 합니다. 이름이 없기때문에 이들은 변수에 저장되어서 변수이름으로 호출되어야합니다
+        document.write("<h2>" + fv1 + "<h2>");
+            //함수를 저장하고 있는 변수의 내용을 출력할 수 있습니다.
+            //함수의 몸체내용이 출력됨
+
+        //8. 복합 대입 연선자 : +=, -=, *=, /=, %=
+        var value = 10;
+        value += 10; //valus = value + 10;
+        document.write("<h2>" + value + "</h2>");
+
+        value = "Hello";
+        value += "World"
+        document.write("<h2>" + value + "</h2>");
+
+        //9. 증감 연산자
+        var number = 10;
+        document.write("<h2>" + (++number + 5) + "</h2>");
+        number = 10;
+        document.write("<h2>" + (number++ + 5) + "</h2>");
+
+    </script>
+</head>
+<body>
+    <script type="text/javascript">
+        //abc(); 함수의 호출과 정의는 head body 어느곳에서든 가능.
+        // 보통은  head에서 정의하고 body에서 호출
+    </script> 
+    <input type="button" value="클릭" onclick="abc2()"/>   
+</body>
+</html>
