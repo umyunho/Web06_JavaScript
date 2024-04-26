@@ -50,6 +50,76 @@
         number = 10;
         document.write("<h2>" + (number++ + 5) + "</h2>");
 
+        // 10. 변수의 특징과 변수 사이의 연산
+        // -변수는 가장 마지막에 대입한 값을 기억
+        // -문자사이의 + 연산은 이어붙이기 연산
+        // -문자와 숫자 사이의 +연산도 이어붙이기 연산이 돼서 최종 문자결과가 도출
+        var cup = 'Coffee';
+        cup = 'Green Tea';
+        cup = 'Water';
+        document.write('<h2>Drink ' + cup + '...!!!</h2>');
+        var number = 10;
+        document.write('<h2>숫자 값 : ' + number + '</h2>');
+        var num = 1234 + ""; //num변수에는 숫자 1234가 아닌 "1234"가 저장
+
+        // 11.자료형 검사
+
+        // 문자열
+        document.write( "<h2>'홍길동' : " + typeof( "홍길동") + "</h2>");
+
+        //숫자
+        document.write( "<h2>1234 : " + typeof(1234) + "</h2>");
+        document.write( "<h2>1234.123 : " + typeof(1234.123) + "</h2>");
+
+        //Boolean
+        document.write("<h2>true : " + typeof(true) + "</h2>");
+
+        //Boolean
+        document.write( "<h2>function(){} : " + typeof( function(){} ) + "</h2>");
+
+        // 12.자바 스크립트에서 사용하는 객체(사용자 정의)
+        // - 자바스크립트에는 클래스라는 개념이 쓰이지 않고 사용됨
+        // - 클래스 형태로 만들어지지 않는 "자유형태의 객체"가 사용됨
+        // - 하나의 변수안에 여러 멤버변수(속성)와 멤버 함수를 생성해놓고 객체라고 부른다.(멤버함수도 자주 사용하지는 않음)
+        // var objectVar = { 
+        //     a:10, 
+        //     b:20,
+        //     c:function(){
+        //         document.write("객체 안에 있는 멤버함수입니다.");
+        //     }
+        // };
+        var objectVar = { 
+            a:10, 
+            b:20,
+            c:function(){
+                document.write("객체 안에 있는 멤버함수..");
+            }
+        };
+
+        //객체변수 objectVar에 객체를 저장 -> 그 객체안에는 a와 b라는 멤버변수가 존재.
+        //각 멤버변수의 값은 a<-10 b<-20을 저장
+        document.write("<h2>" + typeof( { a:10, b:20 } ) + "</h2>");
+        document.write("<h2>" + typeof( { objectVar } ) + "</h2>");
+
+        //private, public의 규칙도 없다.
+        document.write("<h2>objectVar.a" + objectVar.a + "</h2>");
+        document.write("<h2>objectVar.b" + objectVar.b + "</h2>");
+        document.write("<h2>objectVar : " + objectVar + "</h2>");
+
+        // 13. 자바스크립트 변수의 특별한 기능 두번째
+        // 변수의 선언 없이도 변수의 사용이 가능하다.
+        number = 100;
+        document.write("<h2>number 변수 값 : " + number + "</h2>");
+
+        //가만 위와 같은 경우도 값이 대입되지 않으면 결과는 undefined가 된다.
+        document.write("<h2>typeof(numver2) : " + typeof(number2) + "</h2>");
+
+        // 변수값이 Undefined dls ruddn
+        // 변수는 생성했지만 값을 대입하지 않았을때
+        var variable2
+        
+        document.write( "<h2>2. " + varible2 + "</h2>");
+        document.write( "<h2>2. " + typeof(variable2) + "</h2>");
     </script>
 </head>
 <body>
@@ -58,5 +128,7 @@
         // 보통은  head에서 정의하고 body에서 호출
     </script> 
     <input type="button" value="클릭" onclick="abc2()"/>   
+    <input type="button" value="클릭" onclick="fv2()"/>   
+
 </body>
 </html>
