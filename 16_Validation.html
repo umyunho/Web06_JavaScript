@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>16_Validation</title>
+
+</head>
+<body>
+    <div id="wrap", align="center">
+        <h1>사용자 등록</h1>    
+        <form name="form" method="post" action="15_result.html">
+            <table>
+                <tr>
+                    <th>USER_ID</th>
+                    <td><input type="text" name="userid" />
+                    </td>
+                </tr>
+                <tr>
+                    <th>PASSWORD</th>
+                    <td><input type="password" name="pwd" id="pwd" /></td>
+                </tr>
+                <tr>
+                    <th>RETYPE PW</th>
+                    <td><input type="password" name="pwd_check" id="pwd_check" /></td>
+                </tr>
+                <tr>
+                    <th>USER NAME</th>
+                    <td><input type="text" name="username" id="username" /></td>
+                </tr>
+                <tr>
+                    <th>EMAIL</th>
+                    <td><input type="text" name="email" id="email" /></td>
+                </tr>
+                <tr>
+                    <th>PHONE</th>
+                    <td><input type="text" name="phone" id="phone" /></td>
+                </tr>
+            </table>
+            <input type="submit" value="등록" />
+            <input type="reset" value="다시입력" />
+            <!-- 
+                submit를 클릭하면 form내부 입력란들에 입력한 내용들이 action에 설정된 곳으로 전송된다. 이때 전송내용을 외부로 노출하지 않으려면 method에 post를 입력한다. 
+                method의 기본값은 "get"이며 입력해도되고 안해도 get로 인식됨
+             -->
+        </form>
+    </div>
+</body>
+</html>
