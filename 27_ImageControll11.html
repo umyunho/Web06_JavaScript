@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>27_ImageControll11</title>
+    <style type="text/css">
+        img{width:600px; height:400px;}
+        .view{position:relative; width: 600px; height: 400px; border: 2px solid blue;  overflow: hidden; }
+        .imgs{position:absolute; width: 4800px; height: 400px; border: 1px solid red; left: 0; top: 0; transition: 0.3s;}
+        #remote{position: absolute; width:100px; height:50px;bottom:0px; left:250px; border:1px dotted white;}
+        #remote div{position: relative; width: 25px; height:25px; background: white; border-radius: 50%; text-align: center; margin:15px 35px;}
+    </style>  
+    <script type="text/javaScript">
+        var state = false;   //현재 자동 플레이중인지를 저장
+        var num = 0;
+        var timer;
+        function start_stop(){
+            if( state == true ){
+                //버튼 표시 글자를 '▶'로 변경
+                document.getElementById("btn").innerHTML = '▶';
+                //interval 멈춤
+                window.clearInterval(timer);
+                //state를 false로 변경
+                state = false;
+            }else{
+                //버튼 표시 글자를 ■로 변경
+                document.getElementById("btn").innerHTML = '■';
+
+                //interval 재실행;
+                timer = window.setIntercal( function(){
+                    num++
+                    if(num > 7) num = 0;
+                    var dist = -600 * num;
+                    document.getElementById("imgs").style.left = dist + 'px';
+                }, 1500);
+                //state를 true로 변경
+                state = true;
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="view">
+        <div class="imgs" id="imgs">
+            <img src="images/Koala.jpg" /><img src="images/Chrysanthemum.jpg" alt=""><img src="images/Desert.jpg"><img src="images/Hydrangeas.jpg" /><img src="images/Jellyfish.jpg" alt=""><img src="images/Lighthouse.jpg" /><img src="images/Penguins.jpg" alt=""><img src="images/Tulips.jpg" />
+        </div>
+
+        <div id="remote">
+            <div id="btn" onclick="start_stop();">■</div></li>
+        </div>
+
+    </div>
+</body>
+</html>
